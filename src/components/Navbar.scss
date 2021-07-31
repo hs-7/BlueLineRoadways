@@ -1,0 +1,13 @@
+.navbar{
+    background-color: salmon;
+    background-image: linear-gradient(to right, rgb(255, 13, 134),  salmon);
+    position: relative;
+
+    .navbar-brand{
+        font-weight: 700;
+
+        >.brandText{
+            color: $alt-color;
+        }
+    }
+}

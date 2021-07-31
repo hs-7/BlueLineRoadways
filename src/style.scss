@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$primary-color: rgb(255, 13, 134);
+$secondary-color: rgb(29, 29, 29);
+$alt-color: #0033a0;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+@import "./components/Navbar.scss";
+@import "./components/Home.scss";
+@import "./components/Footer.scss";
+@import "./components/SearchBar.scss";
+
+.app{
+    min-height: 100vh;
+    background-color: rgba($color: #000000, $alpha: .09);
+    position: relative;
+
+    .container{
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        min-height: 100vh;
+
+        >.login-box{
+            display: flex;
+            min-height: 50vh;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            >.base-login{
+                background: url("./assets/01.svg") no-repeat;
+                background-size: cover;
+                min-height: inherit;
+                position: relative;
+                top: 0;
+                border-radius: 0.7em 0 0 0.7em;
+
+                .link{
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+
+                    .active{
+                        background-color: $primary-color;
+                    }
+
+                    >button{
+                        display: block;
+                        width: 100%;
+                        text-align: right;
+                        padding: 0.5em 0 0.3em 1em;
+                        border-radius: 5em 0 0 5em;
+                        letter-spacing: 0.081em;
+                        border-style: none;
+                        box-shadow: 0 0 0.2em black;
+                        margin-bottom: 0.12em;
+                        color: black;
+                        font-size: 0.9em;
+                    }
+                }
+            }
+            
+            >.login-section{
+                font-size: 0.9em;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: inherit;
+                background-color: white;
+                box-shadow: 0 0 1em rgba($color: #000000, $alpha: 0.1);
+                border-radius: 0 0.7em 0.7em 0;
+                padding: 0 1em;
+
+                .login-section{
+                    padding: 1em;
+                    width: 100%;
+                    .section-heading{
+                        padding: 0.71em 0;
+                        h3{
+                            padding: 0;
+                            font-size: 1.3em;
+                            font-weight: 700; 
+                        }
+                    }
+                    
+                    .input-login{
+                        border-style: none;
+                        border-radius: 5em;
+                        padding: 0.31em 1em;
+                        margin-bottom: 0.31em;
+                        color: grey;
+                        border: 1px solid rgba($color: #000000, $alpha: .20);
+                        box-shadow: 0 0 0.21em rgba($color: #000000, $alpha: 0.1);
+                        background-color: #ffffff;
+                        &:focus{
+                            border-style: none;
+                        }
+                    }
+
+                    .btn-submit{
+                        background-color: $primary-color;
+                        border-style: none;
+                        border-radius: 5em;
+                        margin: 0.5em 0;
+                    }
+                }
+            }
+        }
+    }
+}

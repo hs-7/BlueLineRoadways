@@ -1,0 +1,41 @@
+.HomeSrc{
+    filter: drop-shadow(0 0.5em 1em rgba(43, 49, 54, 0.932));
+    margin: 1em 0;
+    .exSym{
+        padding: 0.6em 0.6em;
+        background-color: white;
+        border: 1px solid white;
+    }
+
+    .srcInput{
+        font-size: 0.9em;
+    }
+
+    .dateInput{
+        min-width: 14em;
+    }
+    .subInput{
+        background-color: #0033a0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .HomeSrc{
+        >div{
+            display: flex;
+            flex-wrap: wrap;
+
+            .exSym{
+                margin: auto;
+            }
+
+            .dateInput{
+                width: auto;
+                margin: 0.7em auto;
+            }
+            .subInput{
+                width: 100%;
+            }
+        }
+    }
+}
