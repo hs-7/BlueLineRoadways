@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from './Home.jsx';
+import Home from './User/Home.jsx';
 import Login from './Login';
 import Footer from './Footer.jsx';
 import Register from './Register';
 import Navbar from './Navbar';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
-import Routes from './Routes.jsx';
+import Routes from './User/Routes.jsx';
 
 
 function App() {

@@ -4,10 +4,7 @@ export default function Footer() {
     return (
         <>
         <footer className="footer">
-            <div className="footer-head">
-                    <p>secure journey</p>
-            </div>
-            <div className="col-md-11 row footer-body d-flex flex-wrap justify-content-between">
+            <div className="col-md-11 footer-body d-flex flex-wrap justify-content-between">
                 <div className="flexItem">
                     <h4>mail us</h4>
                         <li>

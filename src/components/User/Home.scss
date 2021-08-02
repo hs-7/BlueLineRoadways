@@ -1,0 +1,127 @@
+
+.hero-section{
+    background: $primary-bg;
+    background-size: cover;
+    position: relative;
+    min-height: 50vh;
+
+    .heroHeading{
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
+        color: whitesmoke;
+        text-shadow: .3em 0.2em 0.6em $secondary-color;
+    }
+
+    .heroText{
+        font-size: 0.9rem;
+        color: $secondary-color;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-shadow: 0.1em 0.2em 0.8em $alt-color;
+    }
+}
+
+.feauture-section{
+    font-size: 0.96em;
+    min-height: 50vh;
+
+    h2{
+        font-weight: 500;
+        color: $secondary-color;
+    }
+
+    ul{
+        line-height: 2.3em;
+        margin: 0.91em 0;
+    }
+
+    li{
+        list-style: none;
+        &::before{
+            background: url("https://image.flaticon.com/icons/png/512/190/190411.png") no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 1em; 
+            height: 1em;
+            content:"";
+            margin-right: 0.61em;
+        }
+
+        p{
+            display: inline;
+        }
+    }
+}
+
+.Portfolio-section{
+    
+    background: linear-gradient(rgba($secondary-color, 0.9), rgba($secondary-color,.8)), url("../../assets/annie-spratt-tG822f1XzT4-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba($color: #FFFFFF, $alpha: 0.75);
+    font-size: 0.9em;
+    min-height: 50vh;
+    
+    li{
+        line-height: 2em;
+        list-style: none;
+        &::before{
+            content: "s";
+        }
+
+        p{
+            display: inline;
+        }
+    }
+}
+
+.contact-section{
+    .contact{
+        box-shadow: 0 0 0.7em $secondary-color;;
+        background-color: white;
+        margin: 1.5em 0;
+        .contactus{
+            border-radius: 0 0 6em 0;
+        }
+        p{
+            margin-top: 1.2em;
+            font-size: 0.9em;
+        }
+    }
+    .contactForm{
+        .emailIn{
+            padding: 0.3em;
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+        .textIn{
+            padding: 3em;
+            padding: 0.3em 0 3em 0.3em ;
+            min-height: 8em;
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+        .subBtn{
+            background-color: $alt-color;
+            color: white;
+            font-weight: 550;
+            letter-spacing: 0.1em;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero-section{
+        min-height: 100vh;
+    }
+
+    .feauture-section{
+        min-height: 100vh;
+    }
+
+    .contact-section{
+        min-height: 100vh;
+    }
+}
+

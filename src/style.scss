@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-$primary-color: rgb(255, 13, 134);
-$secondary-color: rgb(29, 29, 29);
+$bg-color: rgba($color: #000000, $alpha: .09);
+$primary-bg: linear-gradient(to right, rgb(255, 13, 134),  salmon);
+$secondary-color: #1F2833;
 $alt-color: #0033a0;
+$black-color: #0B0C10;
 
 
 *{
@@ -14,13 +16,13 @@ $alt-color: #0033a0;
 
 
 @import "./components/Navbar.scss";
-@import "./components/Home.scss";
+@import "./components/User/Home.scss";
 @import "./components/Footer.scss";
-@import "./components/SearchBar.scss";
+@import "./components/User/SearchBar.scss";
 
 .app{
     min-height: 100vh;
-    background-color: rgba($color: #000000, $alpha: .09);
+    background-color: $bg-color;
     position: relative;
 
     .container{
@@ -52,7 +54,7 @@ $alt-color: #0033a0;
                     right: 0;
 
                     .active{
-                        background-color: $primary-color;
+                        background-image: $primary-bg;
                     }
 
                     >button{
@@ -110,7 +112,7 @@ $alt-color: #0033a0;
                     }
 
                     .btn-submit{
-                        background-color: $primary-color;
+                        background-image: $primary-bg;
                         border-style: none;
                         border-radius: 5em;
                         margin: 0.5em 0;

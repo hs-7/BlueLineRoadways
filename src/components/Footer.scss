@@ -1,25 +1,14 @@
 .footer{
-    background-color: $primary-color;
+    background-image: linear-gradient(to right, rgb(255, 13, 134),  salmon);
     position: relative;
     bottom: 0;
     font-size: 0.9em;
-
-    .footer-head{
-        background-color: rgb(29, 29, 29);
-        text-align: center;
-        color: azure;
-
-        p{
-            font-size: 0.9em;
-            padding: 0.7em 1em;
-            margin-bottom: 0;
-        }
-    }
 
     .footer-body{
         background: transparent;
         display: block;
         margin: auto;
+        padding: 1em 0;
 
         li{
             font-size: 0.9em;
@@ -52,12 +41,12 @@
     }
 
     .footer-bottom {
-        background: rgb(29, 29, 29);
+        background: $black-color;
         position: relative;
         bottom: 0;
         text-align: center;
         color: azure;
-        font-size: 0.9em;
+        font-size: 0.8em;
         
         p{
             padding: 0.8em 1em;
