@@ -20,13 +20,13 @@ export default function RegisterationPortion(props) {
               <input className="w-100 input-login" type="text" id="username" onChange={e=>setUsername(e.target.value)} placeholder="username"></input>
             </div>
             <div className="form-group mb-1">
-              <input className="w-100 input-login" type="text" id="username" onChange={e=>setEmail(e.target.value)} placeholder="user email"></input>
+              <input className="w-100 input-login" type="text" id="email" onChange={e=>setEmail(e.target.value)} placeholder="user email"></input>
             </div>
             <div className="form-group mb-1">
-              <input className="w-100 input-login" type="text" id="username" onChange={e=>setPassword(e.target.value)} placeholder="password"></input>
+              <input className="w-100 input-login" type="text" id="password" onChange={e=>setPassword(e.target.value)} placeholder="password"></input>
             </div>
             <div className="form-group">
-              <input className="w-100 input-login" type="password" id="password" onChange={e=>setConfirmPass(e.target.value)} placeholder="confirm password"></input>
+              <input className="w-100 input-login" type="password" id="c_password" onChange={e=>setConfirmPass(e.target.value)} placeholder="confirm password"></input>
             </div>
             <div className="form-group">
               <button className="btn btn-submit">Submit</button>

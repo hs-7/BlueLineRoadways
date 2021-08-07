@@ -19,4 +19,17 @@ route.post("/register", services.register)
 route.delete("/delete", auth, services.delete)
 
 
+route.post("/register_bus", services.register_bus)
+route.post("/register_stop", services.register_stop)
+route.post("/register_route", services.register_route)
+route.post("/register_schedule", services.register_schedule)
+
+
+route.get("/busdata", services.busdata)
+route.get("/stopdata", services.stopdata)
+route.get("/routedata", services.routedata)
+route.get("/scheduledata", services.scheduledata)
+
+route.post("/findschedules", services.findschedules)
+
 module.exports = route;

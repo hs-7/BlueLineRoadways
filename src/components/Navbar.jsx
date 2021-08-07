@@ -16,8 +16,8 @@ export default function Navbar(props) {
 
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light col-md-12 mx-auto">
-        <div className="container-fluid col-md-11 mx-auto">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-light col-md-12 mx-auto">
+        <div className="container-fluid position-relative col-md-11 mx-auto">
             <Link className="navbar-brand" to="/"><span className="brandText">BlueLine</span>Roadways</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

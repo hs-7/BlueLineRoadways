@@ -6,7 +6,6 @@ $secondary-color: #1F2833;
 $alt-color: #0033a0;
 $black-color: #0B0C10;
 
-
 *{
     padding: 0;
     margin: 0;
@@ -19,6 +18,7 @@ $black-color: #0B0C10;
 @import "./components/User/Home.scss";
 @import "./components/Footer.scss";
 @import "./components/User/SearchBar.scss";
+@import "./components/User/Route.scss";
 
 .app{
     min-height: 100vh;

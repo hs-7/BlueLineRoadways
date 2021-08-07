@@ -8,7 +8,7 @@ export default function SearchBar() {
                         <button className="fas fa-exchange-alt exSym"></button>
                         <input class="form-control srcInput" name="Destination" placeholder="To"></input>
                         <input type="date" class="btn btn-light dateInput" name="date"></input>
-                        <input type="submit" value="Search" class="btn btn-primary float-right subInput"></input>
+                        <input type="submit" value="Search" class="btn btn-primary rounded-0 float-right subInput"></input>
                     </div>
                 </form>
     )

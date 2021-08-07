@@ -1,0 +1,22 @@
+.routeList-section{
+    .filterBox{
+        background-color: white;
+    }
+    text-align: center;
+
+    .RouteListItem{ 
+        background-color: white;
+        box-shadow: 0 0 0.3em $secondary-color ;
+        margin: 0.11em 0;
+
+        .listItem{
+           flex-basis: 100%;
+           box-shadow: 0 0 0.3em $bg-color ;
+           margin: 0.131em;
+           background-color: whitesmoke;
+        }
+        p{
+            margin: 0;
+        }
+    }
+}
