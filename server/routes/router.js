@@ -31,5 +31,6 @@ route.get("/routedata", services.routedata)
 route.get("/scheduledata", services.scheduledata)
 
 route.post("/findschedules", services.findschedules)
+route.post("/paymentgate", services.paymentgate)
 
 module.exports = route;

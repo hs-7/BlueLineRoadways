@@ -8,6 +8,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Routes from './User/Routes.jsx';
 import PickSeats from './User/PickSeats.jsx';
 import AdminDash from './Admin/AdminDash.jsx';
+import Payment from './User/Payment.jsx';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/register" component={Register}></Route>
             <Route path="/routes" viewseat={setviewSeat} component={Routes}/>
             <Route path="/viewseats/:catId" component={PickSeats}></Route>
+            <Route path="/payment" component={Payment}></Route>
             <Route path="/admindash" component={AdminDash}></Route>
           </Switch>
           <Footer/>

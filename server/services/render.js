@@ -396,3 +396,49 @@ exports.findschedules = async(req, res)=>{
         res.status(500).send({ err: error.message || "Error while Registration"})
     }
 }
+
+exports.paymentgate = async(req, res)=>{
+    try{
+
+        //validate request
+        if(!req.body){
+            res.status(406).send({err: "You have to fill registration form"});
+            return
+        }
+
+        let{
+            UserId,
+            Despatcher,
+            Destination,
+            Seats_SleeperNo,
+            PaymentType,
+            TotalAmount,
+            DateOfBooking
+        } = req.body;
+
+        if(!UserId || !Despatcher ||!Seats_SleeperNo){
+            res.status(406).send({err: "Not all fields have been filled"});
+        }
+        // using document structure
+        const newSchedule = new Booking({UserId,
+            Despatcher,
+            Destination,
+            Seats_SleeperNo,
+            PaymentType,
+            TotalAmount,
+            DateOfBooking
+        })
+
+        newSchedule
+            .save(newSchedule)
+            .then(register=>{
+                res.send(register)
+            })
+            .catch(error=>{
+                res.status(406).send({err: error.message||"Something went wrong while registration"})
+            });
+
+    }catch(error){
+        res.status(500).send({ err: error.message || "Error while Registration"})
+    }
+}
