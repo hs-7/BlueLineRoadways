@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 // create a middleware
 const auth = (req, res, next) => {
-    const token = req.header('x-access-token')
+    const token = req.headers['authorization']
 
     if(!token){
         return res.status(406).send({err: "No authentication token, authentication denied"})

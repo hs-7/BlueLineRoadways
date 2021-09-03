@@ -8,17 +8,7 @@ export default function Routes(props) {
 
     const viewseat = props.viewseat;
 
-    const [busSch, setbusSch] = useState([{
-        "bus_details": "",
-        "depdes_obid": "",
-        "dep_place": "",
-        "dep_time": "",
-        "des_place": "",
-        "des_time": "",
-        "sch_date": "",
-        "price": "",
-        "total_time":""
-    }])
+    const [busSch, setbusSch] = useState()
     
     const [origin, setOrigin] = useState("");
     const [destination, setDestination] = useState("");
@@ -45,13 +35,11 @@ export default function Routes(props) {
     let qp3 = url.searchParams.get("date");
 
     const bindBusSchedules = async () => {
-
         const newSchedule = {
             "origin": qp1,
             "destination": qp2,
             "date": qp3
         }
-
         const res = await fetch("http://localhost:8080/api/findschedules", {
             method: "POST",
             headers: {
@@ -63,12 +51,11 @@ export default function Routes(props) {
         const status = await res.status;
         const data = await res.json();
         setbusSch(data);
-        console.log(data)
 
         if(status === 422||status === 406||status === 500||!status){
-            window.alert("didnt get data");
+            console.log("didnt get bus data");
         }else{
-            window.alert("get data Successfull");
+            console.log("get bus data Successfull");
         }
     }
 
@@ -78,10 +65,7 @@ export default function Routes(props) {
         <>
             <SearchBar/>
             <div className="routeList-section row mx-0 my-2">
-                <Filter/>
-                <div className="col-md-9 p-1">
-                    <RouteListItem viewseat={viewseat} props={{busSch}}/>
-                </div>
+                {!busSch?<div className="bg-light p-4"><span>loading</span></div>:<><Filter/><div className="col-md-9 p-1"><RouteListItem viewseat={viewseat} props={{busSch}}/></div></>}     
             </div>
         </>
     )

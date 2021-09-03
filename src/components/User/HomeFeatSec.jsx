@@ -11,7 +11,7 @@ export default function HomeFeatSec() {
                     <li><p>Bus Hiring on time for persanal and wedding events</p></li> 
                     <li><p>Well mentained Buses with frequent mentainance and cleaning</p></li> 
                     <li><p>Experience and Professonal Drivers and Staff which take care your jouney</p></li> 
-                    <li><p>Popular Tours of cultural and natural diversity</p></li> 
+                    <li><p>Quick customer support for any concern</p></li> 
                     <li><p>Everything you could ask for at a pretty good price</p></li>
                     </ul>
             </div>

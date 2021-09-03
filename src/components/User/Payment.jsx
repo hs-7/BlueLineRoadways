@@ -16,14 +16,14 @@ export default function Payment(props) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const myHeaders = new Headers();
 
+        myHeaders.append('Content-Type', 'application/json');
+        myHeaders.append('Authorization', localStorage.getItem("x-access-token"));
         
-
         const res = await fetch("http://localhost:8080/api/paymentgate", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: myHeaders,
             body:JSON.stringify(userCredential)
         });
 
@@ -32,12 +32,11 @@ export default function Payment(props) {
         console.log(data)
 
         if(status === 422||status === 400||status === 406||status === 500||!data){
-            window.alert("Login Invalid");
+            window.alert("Payment Unsuccessfull");
         }else{
-            window.alert("Login Successfull");
+            window.alert("Payment Successfull");
         }
     }
-
 
     return (
         <div className="container-fluid">

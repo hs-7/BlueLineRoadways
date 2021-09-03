@@ -14,7 +14,7 @@ import Payment from './User/Payment.jsx';
 function App() {
 
   const [viewSeat, setviewSeat] = useState("");
-
+  const [seatNo, setseatNo] = useState("")
   const checkTkn = () => {
     if(localStorage.getItem("x-access-token")){
       return true;
@@ -40,8 +40,8 @@ function App() {
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
             <Route path="/routes" viewseat={setviewSeat} component={Routes}/>
-            <Route path="/viewseats/:catId" component={PickSeats}></Route>
-            <Route path="/payment" component={Payment}></Route>
+            <Route path="/viewseats/:catId" seatNo={seatNo} setseatNo={setseatNo} component={PickSeats}></Route>
+            <Route path="/payment" component={localStorage.getItem("x-access-token")?Payment:Login}></Route>
             <Route path="/admindash" component={AdminDash}></Route>
           </Switch>
           <Footer/>

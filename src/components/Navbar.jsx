@@ -4,16 +4,6 @@ import {Link} from 'react-router-dom';
 export default function Navbar(props) {
     
     let{islogin, setIslogin}=props.logData;
-   
-    // const checkLogin = () => {
-    //     if(localStorage.getItem("x-access-token")){
-    //         return true;
-    //     }
-    //     else{ 
-    //         return false;
-    //     }
-    // }
-
 
     return (
         <nav className="navbar sticky-top navbar-expand-lg navbar-light col-md-12 mx-auto">
@@ -28,7 +18,7 @@ export default function Navbar(props) {
                 <Link className="nav-link" to="#">Features</Link>
                 {!islogin?
                 <Link className="nav-link" to="/login" tabindex="-1" aria-disabled="true">LogIn&#x25BC;</Link>:
-                <Link className="nav-link" to="/" onClick={()=>{localStorage.removeItem("x-access-token"); setIslogin(false);}} tabindex="-1" aria-disabled="true">LogOut&#x25BC;</Link>}
+                <Link className="nav-link" to="/" onClick={()=>{localStorage.removeItem("x-access-token"); setIslogin(false);}} tabindex="-1" aria-disabled="true"><b>LogOut&#x25BC;</b></Link>}
             </div>
             </div>
         </div>
