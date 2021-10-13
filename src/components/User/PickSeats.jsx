@@ -4,8 +4,7 @@ import {Link} from 'react-router-dom'
 
 export default function PickSeats(props) {
 
-    const data = props.location.param1;
-    console.log(data);
+    const [data, setdata] = useState(props.location.param1)
 
     const [chkseats, setchkseats] = useState([])
 
@@ -21,58 +20,57 @@ export default function PickSeats(props) {
         }
     }
 
-    console.log(chkseats);
 
     return (
         <div className="d-flex mx-0 viewseats-section my-1">
-            <div className="col-md-7 mb-2 bg-light p-4 m-1">
-                <div className="SeatsPattern">
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border-dark justify-content-around mx-auto border bg-white m-1">
+            <div className="col-md-7 d-flex align-items-center  mb-2 bg-light p-4 m-1">
+                <div className="SeatsPattern w-100">
+                    <div className="seat-details col-md-3 row p-1 mx-0 align-items-center border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat01" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat02" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat03" type="checkbox" onClick={(e)=>setSeat(e.target.id)} className="col-md-3 border border-dark my-1"></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row p-1 mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat04" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat05" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat06" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row p-1 mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat07" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat08" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat09" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row p-1 mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat10" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat11" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat12" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row mx-0 p-1 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat13" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat14" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat15" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row mx-0 p-1 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat16" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat17" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat18" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row mx-0 p-1 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat19" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat20" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat21" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row mx-0 p-1 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat22" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat23" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat24" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row mx-0 p-1 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat25" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat26" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat27" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                     </div>
-                    <div className="seat-details col-md-3 row mx-0 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
+                    <div className="seat-details col-md-3 row mx-0 p-1 align-items-center border border-dark justify-content-around mx-auto border bg-white m-1">
                         <input id="Seat28" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat29" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>
                         <input id="Seat30" type="checkbox" className="col-md-3 border border-dark my-1" onClick={(e)=>setSeat(e.target.id)}></input>

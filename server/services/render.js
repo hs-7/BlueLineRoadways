@@ -442,3 +442,27 @@ exports.paymentgate = async(req, res)=>{
         res.status(500).send({ err: error.message || "Error while Registration"})
     }
 }
+
+exports.getusers = async(req,res)=>{
+    try{
+        User.find({}, function(err, stops) {
+            res.send({users: stops});
+         });
+
+
+    }catch(error){
+        res.status(500).send({ err: error.message || "Error while fetching users data"})
+    }
+}
+
+exports.getbookings = async(req,res)=>{
+    try{
+        Booking.find({}, function(err, stops) {
+            res.send({bookings: stops});
+         });
+
+
+    }catch(error){
+        res.status(500).send({ err: error.message || "Error while fetching users data"})
+    }
+}

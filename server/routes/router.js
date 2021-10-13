@@ -30,7 +30,11 @@ route.get("/stopdata", services.stopdata)
 route.get("/routedata", services.routedata)
 route.get("/scheduledata", services.scheduledata)
 
+//Users APIS-->
 route.post("/findschedules", services.findschedules)
 route.post("/paymentgate", auth, services.paymentgate)
+
+route.get("/users", services.getusers)
+route.get("/bookings", services.getbookings)
 
 module.exports = route;

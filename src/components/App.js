@@ -4,14 +4,17 @@ import Login from './Login';
 import Footer from './Footer.jsx';
 import Register from './Register';
 import Navbar from './Navbar';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Switch, Route, useHistory} from 'react-router-dom';
 import Routes from './User/Routes.jsx';
 import PickSeats from './User/PickSeats.jsx';
 import AdminDash from './Admin/AdminDash.jsx';
+import Profile from './User/Profile'
 import Payment from './User/Payment.jsx';
 
 
 function App() {
+
+  const history = new useHistory();
 
   const [viewSeat, setviewSeat] = useState("");
   const [seatNo, setseatNo] = useState("")
@@ -22,17 +25,18 @@ function App() {
     return false;
   }
 
-  let [islogin, setIslogin] = React.useState(checkTkn());
 
-  React.useEffect(() => {
-    setInterval(() => {
-      setIslogin(localStorage.getItem("x-access-token"));
-      }, [])
-  }, 5000);
+  let [islogin, setIslogin] = React.useState(checkTkn());
+  
+
+useEffect(() => {
+  setInterval(() => {
+    setIslogin(localStorage.getItem("x-access-token"));
+ }, 5000)
+}, [])
 
   return (
     <div className="app">
-      <BrowserRouter>
         <>
           <Navbar logData={{islogin,setIslogin}}/>
           <Switch>
@@ -43,10 +47,10 @@ function App() {
             <Route path="/viewseats/:catId" seatNo={seatNo} setseatNo={setseatNo} component={PickSeats}></Route>
             <Route path="/payment" component={localStorage.getItem("x-access-token")?Payment:Login}></Route>
             <Route path="/admindash" component={AdminDash}></Route>
+            <Route path="/profile" component={Profile}></Route>
           </Switch>
           <Footer/>
         </>
-      </BrowserRouter>
     </div>
   );
 }

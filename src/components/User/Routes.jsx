@@ -63,7 +63,7 @@ export default function Routes(props) {
 
     return (
         <>
-            <SearchBar/>
+            <SearchBar origin={origin} destination={destination}/>
             <div className="routeList-section row mx-0 my-2">
                 {!busSch?<div className="bg-light p-4"><span>loading</span></div>:<><Filter/><div className="col-md-9 p-1"><RouteListItem viewseat={viewseat} props={{busSch}}/></div></>}     
             </div>

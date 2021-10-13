@@ -7,9 +7,13 @@ export default function HomePort() {
             <div class="col-md-5">
                 <figure>
                     <blockquote cite="https://www.huxley.net/bnw/four.html">
-                        <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur, nostrum dolorum esse vero iste perferendis ex consectetur, nihil soluta non tempore.</p>
+                        <p>You need not even listen, just wait…the world will offer itself freely to you, unmasking itself.</p> 
                     </blockquote>
-                    <figcaption>—Aldous Huxley, <cite>Brave New World</cite></figcaption>
+                    <figcaption>—– Franz Kafka</figcaption>
+                    <blockquote cite="https://www.huxley.net/bnw/four.html" style={{marginTop:"3em"}}>
+                        <p> The world is full of magic things, patiently waiting for our senses to grow sharper.</p> 
+                    </blockquote>
+                    <figcaption>—– W.B. Yeats</figcaption>
                 </figure>
             </div>
         </div>

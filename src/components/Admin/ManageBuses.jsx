@@ -12,15 +12,12 @@ export default function ManageBuses() {
         const response = await fetch('http://localhost:8080/api/busdata');
         const status = response.status;
         const data = await response.json();
-        setBusdata([...busdata, data])
         
         setBusdata(data.buses);
-        console.log(data.buses)
 
         if(status === 422||status === 400||status === 406||status === 500||!data){
             window.alert("get buses data unsuccessfully");
         }else{
-            window.alert("get buses data successfully");
         }
     }
 
@@ -60,12 +57,12 @@ export default function ManageBuses() {
 
         const status = await res.status;
         const data = await res.json();
-        console.log(data)
+        
+        setBusdata([...busdata, data])
 
         if(status === 422||status === 406||status === 500||!status){
             window.alert("Registration Invalid");
         }else{
-            window.alert("Registration Successfull");
         }
     }
     

@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 
 export default function HomeHeroSec() {
     return (
-        <section class="hero-section container-fluid mb-1">
+        <section class="hero-section mb-1">
         <div class="col-md-11 row mx-auto">
             <div class="my-5 mx-auto text-light">
                 <div class="mb-5">

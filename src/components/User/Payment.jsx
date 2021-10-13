@@ -1,11 +1,33 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router';
 
 export default function Payment(props) {
+
+    const history = new useHistory()
+
+    const [UserData, setUserData] = useState({})
+    function parseJwt (token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    
+        return JSON.parse(jsonPayload);
+    };
+
+    useEffect(async() => {
+        const jc = parseJwt(localStorage.getItem("x-access-token"));
+        const ud = await fetch("http://localhost:8080/api/users")
+        const ud2 = await ud.json()
+        const ud3 = ud2.users.find(item=> item._id==jc.id)
+        setUserData(ud3)
+}, [])
 
     const data = props.location.param1;
     console.log(data)
     const userCredential = {
-        UserId: "hitesh",
+        UserId: UserData.email,
         Despatcher: data.dep_place,
         Destination: data.des_place,
         Seats_SleeperNo: data.selected,
@@ -35,6 +57,7 @@ export default function Payment(props) {
             window.alert("Payment Unsuccessfull");
         }else{
             window.alert("Payment Successfull");
+            history.push("/")
         }
     }
 

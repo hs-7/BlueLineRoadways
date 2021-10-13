@@ -26,8 +26,9 @@
     min-height: 50vh;
 
     h2{
-        font-weight: 500;
-        color: $secondary-color;
+        font-weight: 550;
+        letter-spacing: 1px;
+        color: rgba($secondary-color, 0.9);
     }
 
     ul{
@@ -50,6 +51,27 @@
 
         p{
             display: inline;
+        }
+    }
+
+    .Fs2{
+        margin: auto;
+        min-height: inherit;
+        >fieldset{
+            border: thin groove rgba($secondary-color, 0.5);
+            border-radius: 1.5em;
+            padding: 10px 22px;
+            font-size: 0.9em;
+            font-weight: lighter;
+            line-height: 1.3em;
+            >legend{
+                width: auto;
+                float: none;
+                padding: inherit;
+                text-align: center;
+                font-weight: 900;
+                opacity: 0.9;
+            }
         }
     }
 }
@@ -125,3 +147,19 @@
     }
 }
 
+.admindash{
+    h1{
+        text-align: center;
+        font-variant: small-caps;
+        color: rgba($secondary-color, 0.9);
+    }
+}
+
+.bookings{
+    table{
+    }
+    td, th{
+        vertical-align: middle;
+        text-align: center;
+    }
+}

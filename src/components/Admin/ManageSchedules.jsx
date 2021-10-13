@@ -23,7 +23,6 @@ export default function ManageSchedules() {
         if(status === 422||status === 400||status === 406||status === 500||!data){
             window.alert("get buses data unsuccessfully");
         }else{
-            window.alert("get buses data successfully");
         }
     }
 
@@ -41,7 +40,6 @@ export default function ManageSchedules() {
         if(status === 422||status === 400||status === 406||status === 500||!data){
             window.alert("get buses data unsuccessfully");
         }else{
-            window.alert("get buses data successfully");
         }
     }
 
@@ -58,7 +56,6 @@ export default function ManageSchedules() {
         if(status === 422||status === 400||status === 406||status === 500||!data){
             window.alert("get routes data unsuccessfully");
         }else{
-            window.alert("get routes data successfully");
         }
     }
 
@@ -75,7 +72,6 @@ export default function ManageSchedules() {
         if(status === 422||status === 400||status === 406||status === 500||!data){
             window.alert("get stops data unsuccessfully");
         }else{
-            window.alert("get stops data successfully");
         }
     }
 
@@ -162,10 +158,9 @@ export default function ManageSchedules() {
         const data = await res.json();
         console.log(data)
 
-        if(status === 422||status === 406||status === 500||!status){
+        if(status === 422||status === 400||status === 500||!status){
             window.alert("Registration Invalid");
         }else{
-            window.alert("Registration Successfull");
         }
     }
 
@@ -176,11 +171,11 @@ export default function ManageSchedules() {
         <form  onSubmit={handleSubmit}>
                     <div className="form-group d-flex mb-2">
                         <label for="inputBN" className="col-sm-2 col-form-label fw-bold">Bus Number</label>
-                        <div class="dropdown col-md-4">
-                            <button class="form-control dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className="dropdown col-md-4">
+                            <button className="form-control dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 {(!s_busnum)?"Select Bus":s_busnum}
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 
                                 {Array.from(busdata).map((anObjectMapped, index) => {
                                     return (
@@ -193,11 +188,11 @@ export default function ManageSchedules() {
                     </div>
                     <div className="form-group d-flex mb-2">
                         <label for="inputBN" className="col-sm-2 col-form-label fw-bold">Route Id</label>
-                        <div class="dropdown col-md-4">
-                            <button class="form-control dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className="dropdown col-md-4">
+                            <button className="form-control dropdown-toggle overflow-hidden" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 {(!s_routeid)?"Select Route":s_routeid}
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 
                                 {Array.from(routedata).map((anObjectMapped, index) => {
                                     return (
@@ -210,21 +205,17 @@ export default function ManageSchedules() {
                     </div>
 
                     <div className="form-group border py-1 row mb-2">
-                        <div class="dropdown col-md-3">
-                            <button class="form-control dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className="dropdown col-md-3">
+                            <button className="form-control dropdown-toggle overflow-hidden" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             {(!s_stopid)?"Select Stop":s_stopid}
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
                                 {Array.from(stopdata).map((anObjectMapped, index) => {
                                     return (
                                         <li><button key={`${anObjectMapped._id}`} className="dropdown-item" onClick={()=>sets_stopid(`${anObjectMapped._id}`)}>{anObjectMapped.stopname} - {anObjectMapped.stopcity}</button></li>
                                     );
                                 })}
-
-                                <li><button class="dropdown-item" onClick={()=>sets_stopid("Action")}>Action</button></li>
-                                <li><button class="dropdown-item" >Another action</button></li>
-                                <li><button class="dropdown-item" >Something else here</button></li>
                             </ul>
                         </div>
                         

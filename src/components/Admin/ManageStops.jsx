@@ -19,7 +19,6 @@ export default function ManageStops() {
         if(status === 422||status === 400||status === 406||status === 500||!data){
             window.alert("get buses data unsuccessfully");
         }else{
-            window.alert("get buses data successfully");
         }
     }
 
@@ -55,12 +54,10 @@ export default function ManageStops() {
         const status = await res.status;
         const data = await res.json();
         setStopdata([...stopdata, data])
-        console.log(data)
 
         if(status === 422||status === 406||status === 500||!status){
             window.alert("Registration Invalid");
         }else{
-            window.alert("Registration Successfull");
         }
     }
     

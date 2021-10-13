@@ -1,14 +1,38 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 export default function ViewBookings() {
+
+    const [bookdata, setStopdata] = useState("");
+    let i = 1;
+
+    const bindStopdata = async () =>{
+        // event.preventDefault();
+
+        const response = await fetch('http://localhost:8080/api/bookings');
+        const status = response.status;
+        const data = await response.json();
+        
+        setStopdata(data.bookings);
+        console.log(data.bookings)
+
+        if(status === 422||status === 400||status === 406||status === 500||!data){
+            window.alert("get buses data unsuccessfully");
+        }else{
+        }
+    }
+
+    useEffect(() => {
+        bindStopdata();
+    }, [])
+
+
     return (
         <div>
             <div className="BusGridList bg-light my-2 p-4">
-            <h3>All Regervations</h3>
+            <h3 className="h3 text-primary">All Bookings and Regervations</h3>
             <hr />
-            <div class="card card-default bg-white p-2">
-                <div class="card-header">All Regervations</div>
-                        <table class="card-table table-borderless" Style="overflow-y: auto; overflow-x: auto;" >
+            <div class="card card-default bg-white p-2 overflow-auto small bookings">
+                        <table class="card-table table table-hover" Style="overflow-y: auto; overflow-x: auto;" >
                     <thead>
                     <tr>
                         <th scope="col tableTitles">#BookingID</th>
@@ -23,33 +47,37 @@ export default function ViewBookings() {
                     </thead>
                     <tbody>
 
-                        <tr>
+                    {Array.from(bookdata).map((anObjectMapped, index) => {
+                        return (
+                        <tr key={`${anObjectMapped._id}`}>
                         <th>
-                            ggd
+                            {anObjectMapped._id}
                         </th>
                         <td>
-                            gdggd
+                        {anObjectMapped.UserId}
                         </td>
                         <th>
-                            hsh
+                        {anObjectMapped.Despatcher}
                         </th>
                         <th>
-                            hshs
+                        {anObjectMapped.Destination}
                         </th>
                         <th>
-                            shh
+                        {anObjectMapped.Seats_SleeperNo}
                         </th>
                         <td>
-                        jsh
+                        {anObjectMapped.PaymentType}
                         </td>
                         <td>
-                        shhs
+                        {anObjectMapped.TotalAmount}
                         </td>
                         <td>
-                            sjj
+                        {anObjectMapped.DateOfBooking}
                         </td>
 
-                    </tr>
+                        </tr>
+                        );
+                    })}   
                         </tbody>
                 </table> 
             </div>
